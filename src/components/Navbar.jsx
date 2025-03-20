@@ -24,15 +24,11 @@ import {
 import { ChevronDownIcon, PhoneIcon, PlayCircleIcon } from '@heroicons/react/20/solid'
 
 const products = [
-  { name: 'Analytics', description: 'Get a better understanding of your traffic', href: '#', icon: ChartPieIcon },
-  { name: 'Engagement', description: 'Speak directly to your customers', href: '#', icon: CursorArrowRaysIcon },
-  { name: 'Security', description: 'Your customers’ data will be safe and secure', href: '#', icon: FingerPrintIcon },
-  { name: 'Integrations', description: 'Connect with third-party tools', href: '#', icon: SquaresPlusIcon },
-  { name: 'Automations', description: 'Build strategic funnels that will convert', href: '#', icon: ArrowPathIcon },
-]
-const callsToAction = [
-  { name: 'Watch demo', href: '#', icon: PlayCircleIcon },
-  { name: 'Contact sales', href: '#', icon: PhoneIcon },
+  { name: 'Chapter 1', description: 'Get started by learning Hiragana', href: '#', icon: ChartPieIcon },
+  { name: 'Chapter 2', description: 'Get started by learning Katakana', href: '#', icon: CursorArrowRaysIcon },
+  { name: 'Chapter 3', description: 'Get started by learning Kanji', href: '#', icon: FingerPrintIcon },
+  { name: 'Chapter 4', description: 'Get started by learning Time', href: '#', icon: SquaresPlusIcon },
+  { name: 'Archive', description: 'Resources for you to study from', href: '#', icon: ArrowPathIcon },
 ]
 
 export default function Navbar() {
@@ -61,10 +57,10 @@ export default function Navbar() {
             <Bars3Icon aria-hidden="true" className="size-6" />
           </button>
         </div>
-        <PopoverGroup className="hidden lg:flex lg:gap-x-12">
+        <PopoverGroup className="hidden lg:flex lg:gap-x-12">  {/* Nav Buttons */}
           <Popover className="relative">
             <PopoverButton className="flex items-center gap-x-1 text-sm/6 font-semibold text-gray-900">
-              Product
+              CHAPTERS
               <ChevronDownIcon aria-hidden="true" className="size-5 flex-none text-gray-400" />
             </PopoverButton>
 
@@ -91,34 +87,19 @@ export default function Navbar() {
                   </div>
                 ))}
               </div>
-              <div className="grid grid-cols-2 divide-x divide-gray-900/5 bg-gray-50">
-                {callsToAction.map((item) => (
-                  <a
-                    key={item.name}
-                    href={item.href}
-                    className="flex items-center justify-center gap-x-2.5 p-3 text-sm/6 font-semibold text-gray-900 hover:bg-gray-100"
-                  >
-                    <item.icon aria-hidden="true" className="size-5 flex-none text-gray-400" />
-                    {item.name}
-                  </a>
-                ))}
-              </div>
             </PopoverPanel>
           </Popover>
 
           <a href="#" className="text-sm/6 font-semibold text-gray-900">
-            Features
+            ABOUT
           </a>
           <a href="#" className="text-sm/6 font-semibold text-gray-900">
-            Marketplace
-          </a>
-          <a href="#" className="text-sm/6 font-semibold text-gray-900">
-            Company
+            MAIL
           </a>
         </PopoverGroup>
         <div className="hidden lg:flex lg:flex-1 lg:justify-end">
           <a href="#" className="text-sm/6 font-semibold text-gray-900">
-            Log in <span aria-hidden="true">&rarr;</span>
+            LOG IN <span aria-hidden="true">&rarr;</span>
           </a>
         </div>
       </nav>
@@ -127,7 +108,7 @@ export default function Navbar() {
         <DialogPanel className="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
           <div className="flex items-center justify-between">
             <a href="#" className="-m-1.5 p-1.5">
-              <span className="sr-only">Your Company</span>
+              <span className="sr-only">RE:JAPANESE</span>
               <img
                 alt=""
                 src="https://tailwindcss.com/plus-assets/img/logos/mark.svg?color=indigo&shade=600"
@@ -148,11 +129,11 @@ export default function Navbar() {
               <div className="space-y-2 py-6">
                 <Disclosure as="div" className="-mx-3">
                   <DisclosureButton className="group flex w-full items-center justify-between rounded-lg py-2 pr-3.5 pl-3 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">
-                    Product
+                    CHAPTERS
                     <ChevronDownIcon aria-hidden="true" className="size-5 flex-none group-data-open:rotate-180" />
                   </DisclosureButton>
                   <DisclosurePanel className="mt-2 space-y-2">
-                    {[...products, ...callsToAction].map((item) => (
+                    {[...products].map((item) => (
                       <DisclosureButton
                         key={item.name}
                         as="a"
@@ -168,19 +149,13 @@ export default function Navbar() {
                   href="#"
                   className="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50"
                 >
-                  Features
+                  ABOUT
                 </a>
                 <a
                   href="#"
                   className="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50"
                 >
-                  Marketplace
-                </a>
-                <a
-                  href="#"
-                  className="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50"
-                >
-                  Company
+                  MAIL
                 </a>
               </div>
               <div className="py-6">
@@ -188,7 +163,7 @@ export default function Navbar() {
                   href="#"
                   className="-mx-3 block rounded-lg px-3 py-2.5 text-base/7 font-semibold text-gray-900 hover:bg-gray-50"
                 >
-                  Log in
+                  LOG IN
                 </a>
               </div>
             </div>
